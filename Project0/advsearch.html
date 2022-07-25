@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Search</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+    </head>
+    <body>
+        <div id="page">
+            <img src="https://th.bing.com/th/id/R.4aa108082e7d3cbd55add79f84612aaa?rik=I4dbPhSe%2fbHHSg&riu=http%3a%2f%2fpurepng.com%2fpublic%2fuploads%2flarge%2fpurepng.com-google-logo-2015brandlogobrand-logoiconssymbolslogosgoogle-6815229372333mqrr.png&ehk=ewmaCOvP0Ji4QViEJnxSdlrYUrTSTWhi8nZ9XdyCgAI%3d&risl=&pid=ImgRaw&r=0" id="advsearchlogo">
+            <h2 id="advlabel">Advanced Search</h2>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="advlinks">Google Search</a></li>
+                    <li><a href="imagesearch.html" class="advlinks">Image Search</a></li>
+                </ul>
+            </nav>
+            <div id="linept1"></div>
+            <form action="https://www.google.com/search" id="advsearchform">
+                <h3>Find pages with...</h3>
+                <label for="allwords" class="advsearchlabels">all these words:</label>
+                <input type="text" id="allwords" class="advsearchinputs" name="as_q">
+
+                <label for="exactwords" class="advsearchlabels">this exact word or phrase:</label>
+                <input type="text" id="exactwords" class="advsearchinputs" name="as_epq">
+
+                <label for="anywords" class="advsearchlabels">any of these words:</label>
+                <input type="text" id="anywords" class="advsearchinputs" name="as_oq">
+
+                <label for="nonewords" class="advsearchlabels">none of these words:</label>
+                <input type="text" id="nonewords" class="advsearchinputs" name="as_eq">
+
+                <input type="submit" value="Advanced Search">
+            </form>
+            <footer>
+            </footer>
+        </div>
+    </body>
+</html>

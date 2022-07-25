@@ -1,0 +1,103 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <h2>My History</h2>
+
+    <h3>Bids/Offers</h3>
+    <div class="bids">
+        <h4>Top Bids</h4>
+        {% for bid in bids %}
+            <div class="listingDiv">
+                <h4><a href="{% url 'details' bid.item.id %}">{{bid.item.title}}</a></h3>
+                <p><b>My Bid:</b> ${{bid.price}}</p>
+                <p><b>Current Bid:</b> ${{bid.item.price}}</p>
+                <p><b>Date:</b> {{bid.date}}</p>
+                <p><b>Active?</b> {{bid.item.active}}</p>
+            </div>
+        {% endfor %}
+    </div>
+
+    <br>
+    <br>
+
+    <div class="bids">
+        <h4>Offers</h4>
+        {% for bid in offers %}
+            <div class="listingDiv">
+                <h4><a href="{% url 'details' bid.item.id %}">{{bid.item.title}}</a></h3>
+                <p><b>My Bid:</b> ${{bid.price}}</p>
+                <p><b>Current Bid:</b> ${{bid.item.price}}</p>
+                <p><b>Date:</b> {{bid.date}}</p>
+                <p><b>Active?</b> {{bid.item.active}}</p>
+            </div>
+        {% endfor %}
+    </div>
+
+    <br>
+    <br>
+
+    <div class="bids">
+        <h4>Won/Bought</h4>
+        {% for bid in won %}
+            <div class="listingDiv">
+                <h4><a href="{% url 'details' bid.item.id %}">{{bid.item.title}}</a></h3>
+                <p><b>My Bid:</b> ${{bid.price}}</p>
+                <p><b>Current Bid:</b> ${{bid.item.price}}</p>
+                <p><b>Date:</b> {{bid.date}}</p>
+                <p><b>Active?</b> {{bid.item.active}}</p>
+            </div>
+        {% endfor %}
+    </div>
+
+    <br>
+    <br>
+
+    <div class="bids">
+        <h4>Didn't Win</h4>
+        {% for bid in didnt_win %}
+            <div class="listingDiv">
+                <h4><a href="{% url 'details' bid.item.id %}">{{bid.item.title}}</a></h3>
+                <p><b>My Bid:</b> ${{bid.price}}</p>
+                <p><b>Current Bid:</b> ${{bid.item.price}}</p>
+                <p><b>Date:</b> {{bid.date}}</p>
+                <p><b>Active?</b> {{bid.item.active}}</p>
+            </div>
+        {% endfor %}
+    </div>
+
+    <br>
+    <br>
+
+    <div class="curListings">
+        <h3>Active Listings</h3>
+        {% for listing in listings %}
+            <div class="listingDiv">
+                <h4><a href="{% url 'details' listing.id %}">{{listing.title}}</a></h3>
+                {% if listing.photo %}
+                <img src="{{listing.photo}}">
+                {% endif %}
+                <p><b>Description:</b></p>
+                <p>{{listing.description}}</p>
+                <p><b>Current Price:</b> ${{listing.price}}</p>
+            </div>
+        {% endfor %}
+    </div>
+
+    <br>
+    <br>
+
+    <div class="pastListings">
+        <h3>Past Listings</h3>
+        {% for listing in past_listings %}
+            <div class="listingDiv">
+                <h4><a href="{% url 'details' listing.id %}">{{listing.title}}</a></h3>
+                {% if listing.photo %}
+                <img src="{{listing.photo}}">
+                {% endif %}
+                <p><b>Description:</b></p>
+                <p>{{listing.description}}</p>
+                <p><b>Sold For:</b> ${{listing.price}}</p>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

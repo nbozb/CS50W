@@ -1,0 +1,20 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Search Results
+{% endblock %}
+
+{% block body %}
+    <h1>Search Results</h1>
+    
+    
+    {% if numPos > 0 %}
+    <ul>
+        {% for possibility in possibilities %}
+            <li><a href="{% url 'entry' possibility %}">{{ possibility }}</li>
+        {% endfor %}
+    </ul>
+    {% else %}
+        <p>No results</p>
+    {% endif %}
+{% endblock %}

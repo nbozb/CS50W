@@ -1,0 +1,33 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <h2>My Watchlist</h2>
+
+    <h3>Active Items</h3>
+    <div class="active-items">
+        {% for item in watchlist_items_active %}
+            <div class="listingDiv">
+                <h4><a href="{% url 'details' item.id %}">{{item.title}}</a></h3>
+                <p><b>My item:</b> ${{item.price}}</p>
+                <p><b>Current item:</b> ${{item.price}}</p>
+                <p><b>Date:</b> {{item.date}}</p>
+                <p><b>Active?</b> {{item.active}}</p>
+            </div>
+        {% endfor %}
+    </div>
+
+
+    <h3>Closed Items</h3>
+    <div class="closed-items">
+        {% for item in watchlist_items_closed %}
+            <div class="listingDiv">
+                <h4><a href="{% url 'details' item.id %}">{{item.title}}</a></h3>
+                <p><b>My item:</b> ${{item.price}}</p>
+                <p><b>Current item:</b> ${{item.price}}</p>
+                <p><b>Date:</b> {{item.date}}</p>
+                <p><b>Active?</b> {{item.active}}</p>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock body %}

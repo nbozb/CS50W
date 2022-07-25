@@ -1,0 +1,16 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <h2>Active Listings</h2>
+
+    <form action="{% url 'new_listing' %}" method="POST" class="newlistingform">
+        {% csrf_token %}
+        {% for field in form %}
+        <div class="form-input">
+            <div class="form-input-label"> {{field.label}} {%if field.label == "Starting price"%} (in dollars) {% endif%} </div>
+            <div class="form-input-field"> {{field}} </div>
+        </div>
+        {% endfor %}
+        <input type="submit">
+    </form>
+{% endblock %}

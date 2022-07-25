@@ -1,0 +1,37 @@
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    padding: 30px;
+    min-width: 100vh;
+    max-width: 100vh;
+}
+
+
+.allListings {
+    display: grid;
+    grid-template-columns: 1fr;
+    min-width: 100vh;
+    max-width: 100vh;
+}
+
+.listingDiv {
+    margin: 20px 40px 20px 0px;
+    width: 1fr;
+}
+
+.listingDiv > img {
+    max-width: 10em;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 1215px) {
+    .allListings {
+        grid-template-columns: 1fr;
+    }
+}
