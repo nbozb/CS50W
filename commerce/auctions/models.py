@@ -4,7 +4,6 @@ from multiprocessing.dummy import active_children
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django.core.validators import MinValueValidator
-from flask_login import user_accessed
 
 import datetime
 
