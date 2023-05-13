@@ -1,0 +1,28 @@
+textarea {
+    min-height: 400px;
+}
+
+.email-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 1em;
+    padding-top: 1.5em;
+    background-color: lightgray;
+    max-width: 100%;
+    min-width: 0;
+    overflow: wrap;
+    align-items: center;
+}
+
+.unread-email {
+    background-color: white;
+}
+
+.subject {
+    grid-column-start: 2;
+    grid-column-end: 4;
+}
+
+.timestamp {
+    justify-self: end;
+}

@@ -1,0 +1,30 @@
+{% extends "network/layout.html" %}
+{% load static %}
+
+
+{% block body %}
+    <div class="posts-view">
+        {% if user.is_authenticated %}
+        <h2>New Post:</h2>
+
+        <form action="{% url 'index' %}" method="POST" class="newPostForm">
+            {% csrf_token %}
+            {% for field in form %}
+            <div class="form-input">
+                <div class="form-input-field"> {{field}} </div>
+            </div>
+            {% endfor %}
+            <input type="submit">
+        </form>
+        {% endif %}
+
+        <br><br>
+        <h2 id="posts-view-name"> {{type}} </h2>
+        <div id="posts-view-posts"></div>
+        
+    </div>
+{% endblock body %}
+
+{% block script %}
+    <script src="{% static 'network/script.js' %}"></script>
+{% endblock %}

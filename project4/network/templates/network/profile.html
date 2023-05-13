@@ -1,0 +1,24 @@
+{% extends "network/layout.html" %}
+{% load static %}
+
+{% block body %}
+    <div class="profile-view">
+        <h2 id="profile-view-name">
+        </h2>
+        <div id="profile-view-body">
+
+        </div>
+        <div id="profile-view-follow">
+            <button type="submit" class="followButton" {% if following%} value="Unfollow" {% else %} value="Follow" {% endif %}>{% if following%} Unfollow {% else %} Follow {% endif %}</button>
+        </div>
+    </div>
+
+    {{ followInfo|json_script:"follow-data" }}
+
+{% endblock %}
+
+{% block script %}
+    
+    <script src="{% static 'network/profile.js' %}"></script>
+    
+{% endblock %}
